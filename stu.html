@@ -1,1 +1,63 @@
-
+<html>
+  <head>
+    <title>STUDENT DETAILS</title>
+    <script type="text/javascript">
+        var stu1=new student("sri");
+        var stu2=new student("hima");
+        var stu3=new student("hina");
+        var stu4=new student("siri");
+        var stu5=new student("krish");
+        var studentob=[stu1,stu2,stu3,stu4,stu5];
+        function student(name)
+      {
+        this.name=name;
+        this.sbj=new Array(Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100));
+        
+      }
+      for(var i=0;i<studentob.length;i++)
+      {
+        sum=0;
+        for(var j=0;j<3;j++)
+        {
+          studentob[i].sum=sum+studentob[i].sbj[j];
+        }
+        studentob[i].avg=studentob[i].sum/3;
+      }
+      for(var k=0;k<studentob.length;k++)
+      {
+        document.writeln(studentob[k].name+"  "+studentob[k].sum+"  "+studentob[k].avg);
+      }
+      studentob.sort(function(a,b){return b.sum-a.sum});
+       for(var i=0;i<studentob.length;i++)
+       {
+         document.writeln(studentob[i].name+"  "+studentob[i].sum);
+       }
+      studentob.sort(function(a,b){return b.avg-a.avg});
+       for(var k=0;k<studentob.length;k++)
+       {
+         document.writeln(studentob[k].name+"  "+studentob[k].avg);
+       }
+     studentob.sort(function(a,b){
+       if(a.name < b.name)
+           return -1;
+       else
+          return 1;
+     })
+     for(var k=0;k<studentob.length;k++)
+     {
+       document.writeln(studentob[k].name+"  "+studentob[k].avg+"  "+studentob[k].sum);
+     }
+      
+    </script>
+  </head>
+  <body/>
+</html>
+         
+        
+          
+        
+                                                                     
+                                                                     
+                                                                     
+                                                                    
+      
